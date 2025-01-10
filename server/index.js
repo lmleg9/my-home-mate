@@ -1,21 +1,16 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
+const express = require('express')
+const app = express()
+const routes = require('./router.js')
+const cors = require('cors')
 
-const app = express();
 
-// Middleware
+app.use(cors())
 app.use(express.json());
-app.use(cors());
+app.use('/', routes)
 
-// Database Connection
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('Error connecting to MongoDB:', err));
 
-// Routes
-app.get('/', (req, res) => res.send('API is running'));
+const port = 3000
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
