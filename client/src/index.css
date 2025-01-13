@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Rubik+Vinyl&family=Space+Mono&display=swap');
 
 /*!
 * Start Bootstrap - Shop Homepage v5.0.6 (https://startbootstrap.com/template/shop-homepage)
@@ -103,6 +106,94 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.logo {
+  font-family: 'Caveat', cursive;
+  font-size: 10%;
+
+}
+
+
+
+/* Logo image styling */
+.logo-image {
+  width: 50px;
+  /* Adjust width for the icon */
+  height: 50px;
+  /* Adjust height to maintain aspect ratio */
+}
+
+.logo.navbar-brand {
+  font-family: 'Caveat', cursive;
+  /* Your imported font */
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2.5rem;
+    line-height: 1.2;
+    /* Adjust as needed */
+    padding-right: 0.5rem;
+    /* Add space to prevent cutting off */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+  background: linear-gradient(90deg, #2DD4BF, #A78BFA, #C084FC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+
+
+
+
+.filter-section {
+  position: relative;
+  /* For pseudo-element positioning */
+  background-image: url('/Users/luis/projectsCodeWorks/senior/my-home-mate/client/src/assets/sofa.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  /* Ensures text remains visible */
+  padding: 50px 20px;
+  /* Adjust padding as needed */
+}
+
+/* Add an overlay for opacity */
+.filter-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black with 50% opacity */
+  z-index: 1;
+  pointer-events: none;
+  /* Ensure it doesn’t interfere with interactions */
+}
+
+/* Ensure the content inside is above the overlay */
+.filter-section>* {
+  position: relative;
+  z-index: 2;
 }
 
 hr {
