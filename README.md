@@ -16,7 +16,7 @@ Before you begin, ensure you have the following installed on your machine:
 To get started, clone the repository to your local machine:
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:lmleg9/my-home-mate.git
 ```
 
 ### 2. Navigate to the Project Directory
