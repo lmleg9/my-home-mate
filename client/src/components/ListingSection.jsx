@@ -6,8 +6,8 @@ import MapView from "./MapView";
 import ErrorBoundary from "./ErrorBoundary";
 
 function ListingSection() {
-  const [homes, setHomes] = useState([]);
-  const [filteredHomes, setFilteredHomes] = useState([]);
+  const [homes, setHomes] = useState([]); // Original homes data
+  const [filteredHomes, setFilteredHomes] = useState([]); // Filtered homes
   const [view, setView] = useState("list"); // State to toggle between 'list' and 'map'
 
   useEffect(() => {
@@ -17,8 +17,8 @@ function ListingSection() {
 
         // Filter out invalid homes
         const validHomes = data.filter((home) => home.latitude && home.longitude);
-        setHomes(validHomes);
-        setFilteredHomes(validHomes); // Initialize filteredHomes with valid homes
+        setHomes(validHomes); // Store the original homes
+        setFilteredHomes(validHomes); // Initialize filteredHomes with all valid homes
       } catch (error) {
         console.error("Error fetching homes:", error);
       }
@@ -28,23 +28,25 @@ function ListingSection() {
   }, []);
 
   const handleFilterChange = (filters) => {
-    const { price, rooms, size } = filters;
+    const { price, rooms, size, province } = filters;
 
+    // Always filter from the original `homes` array
     const filtered = homes.filter((home) => {
       return (
-        (!price || home.price <= price) &&
-        (!rooms || home.rooms === parseInt(rooms)) &&
-        (!size || home.size >= parseInt(size))
+        (!price || home.price <= parseInt(price)) &&
+        (!rooms || home.rooms >= parseInt(rooms)) &&
+        (!size || home.size >= parseInt(size)) &&
+        (!province || home.province === province)
       );
     });
 
-    setFilteredHomes(filtered);
+    setFilteredHomes(filtered); // Update the filtered homes
   };
 
   return (
     <>
       <FilterSection onFilterChange={handleFilterChange} />
-      <div className="container my-4">
+      <div className="listing-section my-4">
         {/* Toggle Buttons */}
         <div className="d-flex justify-content-center mb-3">
           <button
@@ -71,9 +73,9 @@ function ListingSection() {
             </div>
           </section>
         ) : (
-            <ErrorBoundary>
-              <MapView homes={filteredHomes} />
-            </ErrorBoundary>
+          <ErrorBoundary>
+            <MapView homes={filteredHomes} />
+          </ErrorBoundary>
         )}
       </div>
     </>

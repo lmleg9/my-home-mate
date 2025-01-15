@@ -114,7 +114,274 @@ body {
 
 }
 
+/* Modal Styling */
 
+.custom-modal-body,
+.custom-modal-image,
+.custom-modal-image img {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-modal .modal-dialog {
+  max-width: 1000px;
+  /* Increase width */
+  width: 90%;
+}
+
+.custom-modal .modal-content {
+  display: flex;
+  flex-direction: row;
+  height: 420px;/* Set a fixed height */
+  overflow: hidden;/* Prevent layout overflow */
+  animation: fadeIn 0.3s ease;
+
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.description-wrapper {
+  overflow-y: auto;
+  max-height: 150px;
+  /* Limit the height of the description area */
+  padding-right: 10px;
+  /* Add padding for a scrollbar if needed */
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.custom-modal-body {
+  display: flex;
+  flex-direction: row;
+  /* Keep row alignment for image and details */
+  gap: 0;
+  /* Ensure no spacing between sections */
+  padding: 0;
+  /* Remove all padding */
+  margin: 0;
+  /* Remove all margin */
+  align-items: stretch;
+  /* Stretch children to align */
+}
+
+.custom-modal-image {
+  flex: 1;
+  /* Allow the image container to grow and fill available space */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margin */
+  border: none;
+  /* Ensure no border adds spacing */
+  width: 100%;
+  /* Take the full width of the parent */
+  height: 100%;
+  /* Take the full height of the parent */
+  overflow: hidden;
+  /* Hide any overflow content */
+  display: flex;
+  /* Center the content */
+  align-items: center;
+  /* Vertical center alignment */
+  justify-content: center;
+  /* Horizontal center alignment */
+  box-sizing: border-box;
+  /* Include padding and border in dimensions */
+}
+
+.custom-modal-image img {
+  width: 100%;
+  /* Scale the image to the full width of the container */
+  height: 100%;
+  /* Scale the image to the full height of the container */
+  object-fit: cover;
+  /* Ensure the image fills the container proportionally */
+  margin: 0;
+  /* Remove any default margin */
+  padding: 0;
+  /* Remove any default padding */
+  border-radius: 0;
+  /* Ensure no rounded corners */
+  display: block;
+  /* Prevent the image from being treated as inline */
+}
+
+
+.custom-modal-info {
+  flex: 2;
+  /* Allocate more space for details */
+  padding: 20px;
+  background-color: #fff;
+}
+
+.custom-modal-info h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #0056b3;
+  /* Blue for the header */
+}
+
+.custom-modal-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.custom-modal-info .description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.custom-modal-info .actions {
+  margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    /* Adjust the number of lines you want to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    gap: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  /* Space between buttons */
+  margin-top: 15px;
+  /* Optional: Add space above the buttons */
+}
+
+.contact-btn,
+.favorite-btn {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-btn {
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
+
+.favorite-btn {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.favorite-btn:hover {
+  background-color: #e9ecef;
+}
+
+.custom-modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+  /* Ensure it's above other elements */
+}
+
+.custom-modal .close-btn:hover {
+  color: #007bff;
+}
+
+
+/* Button styling */
+.btn-outline-dark {
+  border: 1px solid #007BFF;
+  /* Accent border */
+  color: #007BFF;
+  /* Accent text */
+}
+
+.btn-outline-dark:hover {
+  background-color: #007BFF;
+  /* Change background on hover */
+  color: white;
+  /* Change text color on hover */
+}
+
+.property-details {
+  display: flex;
+  gap: 20px;
+  /* Space between the items */
+  align-items: center;
+  /* Align items vertically in the center */
+  margin: 10px 0;
+  /* Add margin above and below */
+}
+
+.property-details p {
+  margin: 0;
+  /* Remove default margins */
+  font-size: 1rem;
+  /* Adjust font size if needed */
+  color: #333;
+  /* Optional: set text color */
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.toggle-btn:hover {
+  color: #0056b3;
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /* Slightly lift the card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  /* Add shadow */
+}
 
 /* Logo image styling */
 .logo-image {
@@ -195,6 +462,84 @@ body {
   position: relative;
   z-index: 2;
 }
+
+.filter-controls .form-control {
+  margin-bottom: 15px;
+  /* Add spacing between rows */
+}
+
+.filter-controls label {
+  font-weight: bold;
+  color: #fff;
+  /* Ensure labels remain visible on dark backgrounds */
+}
+
+/* ListingSection Styling */
+.listing-section {
+  background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+  /* Soft light gray gradient */
+  border-radius: 8px;
+  /* Slightly rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  padding: 20px;
+  /* Maintain spacing inside */
+  margin-top: 20px;
+  /* Add space between sections */
+  color: #333;
+  /* Ensure text is readable */
+  font-family: 'Arial', sans-serif;
+  /* Clean and professional font */
+}
+
+/* Remove Hover Effect */
+.listing-section:hover {
+  transform: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Same shadow */
+}
+
+/* Header and Text Styling */
+.listing-section h2,
+.listing-section p {
+  font-family: 'Arial', sans-serif;
+  color: #444;
+  /* Dark gray for readability */
+  margin-bottom: 10px;
+}
+
+/* Optional Accent Border */
+.listing-section {
+  border: 1px solid #ddd;
+  /* Light gray border for subtle separation */
+}
+
+/* Button Styling */
+.listing-section .btn-primary {
+  background-color: #4f46e5;
+  /* Softer purple-blue */
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.listing-section .btn-primary:hover {
+  background-color: #4338ca;
+  /* Slightly darker on hover */
+}
+
+.listing-section .btn-outline-primary {
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+  background: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.listing-section .btn-outline-primary:hover {
+  background-color: #4f46e5;
+  color: white;
+}
+
 
 hr {
   margin: 1rem 0;
