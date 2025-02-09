@@ -5,7 +5,7 @@ MyHomeMate is a modern and intuitive home search platform designed to simplify t
 # Screenshots
 
 <p align="center">
-  <img src="images/screenshot MyHomeMate.png" />
+  <img src="/Images/Screenshot-MyHomeMate.png" />
 </p>
 
 ## Tech Stack
