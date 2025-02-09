@@ -33,3 +33,11 @@ dist
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Ignore all .env files
+.env
+.env.*
+.env.development
+.env.production
+.env.test
+
