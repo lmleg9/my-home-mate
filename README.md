@@ -2,6 +2,20 @@
 
 MyHomeMate is a modern and intuitive home search platform designed to simplify the process of finding your next home and a compatible roommate. If you're searching for a flat to rent and a potential flatmate to share it with, MyHomeMate helps connect you with like-minded individuals and suitable living spaces.
 
+# Screenshots
+
+<p align="center">
+  <img src="images/screenshot MyHomeMate.png" />
+</p>
+
+## Tech Stack
+
+* [React](https://react.dev/blog/2023/03/16/introducing-react-dev) Front end library for building user interfaces
+* [Vite](https://vitest.dev/)
+* [Express](https://expressjs.com/) Back end
+* [MongoDB](https://www.mongodb.com/) Database
+* [Leaftlet](https://leafletjs.com/) Map
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your machine:
@@ -73,4 +87,13 @@ cd <repository-folder>
 
 
 
+## Contributing
 
+Improvements are welcome :)
+
+Fork the repo and do your thing. Push to your fork and submit a pull request.
+
+
+## Author
+
+Luis Miguel Lopez Estrada - [Github](https://github.com/lmleg9) - [LinkedIn](https://www.linkedin.com/in/lmleg9/)
